@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{.Title}}</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1><span class="highlight">My</span> Notes</h1>
+
+    <div class="user-bar">
+      <span>Logged in as <strong class="highlight">{{.Username}}</strong></span>
+      <form method="POST" action="/logout" style="margin: 0;">
+        <button class="btn-danger">Log out</button>
+      </form>
+    </div>
+
+    <form method="POST" action="/notes" class="note-form">
+      <input name="note" placeholder="Write a note..." required autocomplete="off">
+      <button>Add</button>
+    </form>
+
+    <ul class="notes-list">
+      {{range .Notes}}
+        <li>{{.Content}}</li>
+      {{else}}
+        <p class="empty-state">No notes yet. Add one above!</p>
+      {{end}}
+    </ul>
+  </div>
+</body>
+</html>

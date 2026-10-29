@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{.Title}}</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Create <span class="highlight">Account</span></h1>
+
+    <form method="POST" action="/register">
+      <input name="username" placeholder="Username" required>
+      <input type="password" name="password" placeholder="Password (min 8 characters)" required>
+      <button type="submit">Register</button>
+    </form>
+
+    <p class="auth-footer">
+      Already have an account? <a href="/login">Log in</a>
+    </p>
+  </div>
+</body>
+</html>

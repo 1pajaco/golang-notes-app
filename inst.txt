@@ -1,0 +1,29 @@
+# BUILD
+# services:
+#   notes:
+#     build: .
+#     image: notes-app
+#     ports:
+#       - "3000:3000"
+#     volumes:
+#       - notes-data:/data
+#     restart: unless-stopped
+
+# volumes:
+#   notes-data:
+
+# docker load -i notes-app.tar
+# docker compose up -d
+
+# RUN
+services:
+  notes:
+    image: notes-app
+    ports:
+      - "3000:3000"
+    volumes:
+      - notes-data:/data
+    restart: unless-stopped
+
+volumes:
+  notes-data:
